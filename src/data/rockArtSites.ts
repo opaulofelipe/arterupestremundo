@@ -113,6 +113,50 @@ export const ROCK_ART_SITES: RockArtSite[] = [
     highlightedElement: 'A Rosa Camuna e os guerreiros com escudos'
   },
 
+  {
+    id: 'coa-valley',
+    name: 'Vale do Côa',
+    originalName: 'Sítios de Arte Rupestre do Vale do Côa',
+    country: 'Portugal',
+    countryCode: 'PT',
+    region: 'Vila Nova de Foz Côa, Guarda',
+    continent: 'Europa',
+    approxAge: '~24.000 a 10.000 anos',
+    period: 'Paleolítico Superior ao Magdaleniano Final / Epipaleolítico',
+    estimatedAgeYears: 22000,
+    coordinates: [-7.1050, 41.0068],
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Prehistoric_Rock-Art_Site_of_the_C%C3%B4a_Valley_-_Penascosa_-_Bull_%40_2011-08-06.jpg',
+    imageCaption: 'Gravura paleolítica de um bovino no núcleo de Penascosa, no Vale do Côa.',
+    didacticSummary: 'Às margens do rio Côa, milhares de figuras foram gravadas ao ar livre em painéis de xisto, contrariando a antiga ideia de que a grande arte paleolítica europeia se concentrava apenas no interior de cavernas. Cavalos, auroques, cabras-monteses e cervos aparecem sobrepostos em sucessivas fases, formando um arquivo visual de longa duração no próprio vale.',
+    historicalSignificance: 'A revelação pública do conjunto na década de 1990 desencadeou uma mobilização internacional que interrompeu a construção de uma barragem e transformou o vale em referência mundial de preservação arqueológica. A UNESCO considera o Côa, junto de Siega Verde, o mais notável conjunto de arte paleolítica ao ar livre da Península Ibérica.',
+    discoveryYear: '1991 (identificação arqueológica moderna)',
+    technique: 'Gravura por picotagem, incisão e abrasão sobre superfícies de xisto',
+    unesco: true,
+    unescoYear: 1998,
+    highlightedElement: 'Cavalos e auroques paleolíticos gravados ao ar livre'
+  },
+  {
+    id: 'pech-merle',
+    name: 'Caverna de Pech Merle',
+    originalName: 'Grotte du Pech Merle',
+    country: 'França',
+    countryCode: 'FR',
+    region: 'Cabrerets, Lot, Occitânia',
+    continent: 'Europa',
+    approxAge: '~29.000 a mais de 30.000 anos',
+    period: 'Paleolítico Superior (Gravetiano)',
+    estimatedAgeYears: 29000,
+    coordinates: [1.6442, 44.5075],
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Pech_Merle_main.jpg',
+    imageCaption: 'Mão em negativo associada ao conjunto paleolítico da Caverna de Pech Merle.',
+    didacticSummary: 'Pech Merle reúne centenas de pinturas e gravuras em seu contexto subterrâneo original. O painel mais célebre apresenta dois grandes cavalos pontilhados cercados por mãos em negativo, mamutes, bisões e sinais abstratos. As manchas dos cavalos dialogam com irregularidades naturais da parede, integrando deliberadamente forma geológica e imagem.',
+    historicalSignificance: 'As galerias decoradas foram descobertas em 1922 por três adolescentes de Cabrerets e estudadas logo depois pelo abade e pré-historiador Amédée Lemozi. Ao contrário de muitas cavernas decoradas célebres, Pech Merle permanece visitável em seu estado original sob rígido controle de conservação.',
+    discoveryYear: '1922',
+    technique: 'Pintura a pigmentos minerais, sopro de pigmento, mãos em negativo e gravura',
+    unesco: false,
+    highlightedElement: 'Os dois cavalos pontilhados e as mãos em negativo'
+  },
+
   // AMÉRICA DO SUL
   {
     id: 'cueva-manos',
@@ -181,6 +225,49 @@ export const ROCK_ART_SITES: RockArtSite[] = [
     highlightedElement: 'A onça-pintada sagrada e os xamãs em ascensão ritual'
   },
 
+  {
+    id: 'toro-muerto',
+    name: 'Complexo Arqueológico de Toro Muerto',
+    originalName: 'Complejo Arqueológico Toro Muerto',
+    country: 'Peru',
+    countryCode: 'PE',
+    region: 'Vale de Majes, Castilla, Arequipa',
+    continent: 'América do Sul',
+    approxAge: '~800 a 1.500 d.C.',
+    period: 'Sociedades agrocerâmicas pré-hispânicas dos Andes meridionais',
+    estimatedAgeYears: 1000,
+    coordinates: [-72.5021, -16.2244],
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Toro_Muerto_Archaeological_site_-_petroglyph_%28llama%29.jpg',
+    imageCaption: 'Petróglifo zoomórfico gravado em um dos blocos vulcânicos de Toro Muerto.',
+    didacticSummary: 'Em uma pampa desértica do vale de Majes, milhares de blocos de ignimbrito foram transformados em painéis gravados. O repertório inclui figuras humanas, camelídeos, aves, felinos, serpentes, formas solares e complexas composições geométricas; algumas figuras antropomórficas parecem dançar com braços e pernas abertos.',
+    historicalSignificance: 'Toro Muerto é uma das maiores concentrações de petróglifos da América do Sul e registra a circulação de símbolos entre sociedades agrícolas do sul peruano. O complexo integra a Lista Indicativa do Peru para o Patrimônio Mundial da UNESCO desde 2019.',
+    discoveryYear: '1951 (registro científico oficial)',
+    technique: 'Petróglifos por percussão, picotagem e abrasão em blocos de rocha vulcânica',
+    unesco: false,
+    highlightedElement: 'Figuras dançantes e camelídeos entre padrões geométricos'
+  },
+  {
+    id: 'pedra-pintada-roraima',
+    name: 'Sítio Arqueológico Pedra Pintada',
+    originalName: 'Pedra Pintada de Roraima',
+    country: 'Brasil',
+    countryCode: 'BR',
+    region: 'Terra Indígena São Marcos, Pacaraima, Roraima',
+    continent: 'América do Sul',
+    approxAge: '~4.000 anos AP',
+    period: 'Período pré-colonial amazônico',
+    estimatedAgeYears: 4000,
+    coordinates: [-60.8952, 3.8784],
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Exemplo_de_pintura_rupestre_na_Pedra_Pintada_%28Roraima%29.jpg',
+    imageCaption: 'Pinturas rupestres geométricas no grande bloco granítico da Pedra Pintada, em Roraima.',
+    didacticSummary: 'Um enorme matacão de granito, com caverna em sua base, concentra três grandes áreas pintadas: a própria caverna, o painel principal e a chamada Mesa de Pedra. Círculos, retângulos, linhas contínuas, pontilhadas e ziguezagues aparecem em alturas que ultrapassam dez metros, sugerindo o uso de estruturas de acesso durante a execução de parte das pinturas.',
+    historicalSignificance: 'É um dos sítios arqueológicos mais emblemáticos de Roraima e está inserido na Terra Indígena São Marcos. Escavações identificaram cerâmica, artefatos líticos, restos alimentares, adornos, vestígios de cestaria, hematita usada como pigmento e sepultamentos, revelando um contexto cultural muito mais amplo que os painéis pintados.',
+    discoveryYear: 'Década de 1980 (escavações arqueológicas sistemáticas)',
+    technique: 'Pintura rupestre com pigmentos minerais, incluindo hematita, aplicada sobre granito',
+    unesco: false,
+    highlightedElement: 'Grafismos geométricos pintados a mais de dez metros do solo'
+  },
+
   // AMÉRICA DO NORTE
   {
     id: 'horseshoe-canyon',
@@ -224,6 +311,48 @@ export const ROCK_ART_SITES: RockArtSite[] = [
     unesco: true,
     unescoYear: 1993,
     highlightedElement: 'Figuras humanas bicolores (metade vermelha, metade preta)'
+  },
+
+  {
+    id: 'writing-on-stone',
+    name: 'Writing-on-Stone / Áísínai’pi',
+    originalName: 'Writing-on-Stone / Áísínai’pi',
+    country: 'Canadá',
+    countryCode: 'CA',
+    region: 'Vale do Milk River, Alberta',
+    continent: 'América do Norte',
+    approxAge: '~4.500 anos AP ao período de contato',
+    period: 'Tradições Niitsítapi (Blackfoot) pré-contato e históricas',
+    estimatedAgeYears: 3000,
+    coordinates: [-111.6333, 49.0750],
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Petroglyph_%286022113607%29.jpg',
+    imageCaption: 'Petróglifo em arenito no vale sagrado de Writing-on-Stone / Áísínai’pi.',
+    didacticSummary: 'Entre hoodoos e paredes de arenito do vale do Milk River, milhares de imagens gravadas e pintadas registram visões espirituais, narrativas biográficas, caçadas, cavalos e confrontos. A arte não é tratada apenas como vestígio arqueológico: para a Confederação Blackfoot, o vale permanece uma paisagem sagrada habitada por poderes espirituais.',
+    historicalSignificance: 'O sítio preserva uma das maiores e mais complexas concentrações de arte rupestre das Grandes Planícies e continua integrado às práticas culturais Niitsítapi. Essa continuidade entre paisagem, imagens, tradição oral e cerimônias fundamentou sua inscrição como Patrimônio Mundial.',
+    technique: 'Gravura, incisão, abrasão e pintura sobre paredes de arenito',
+    unesco: true,
+    unescoYear: 2019,
+    highlightedElement: 'Narrativas Blackfoot de guerreiros, espíritos e cavalos'
+  },
+  {
+    id: 'coso-range',
+    name: 'Distrito de Arte Rupestre Coso',
+    originalName: 'Coso Rock Art District',
+    country: 'Estados Unidos',
+    countryCode: 'US',
+    region: 'Coso Range, Deserto de Mojave, Califórnia',
+    continent: 'América do Norte',
+    approxAge: 'até ~16.000 anos, com fases até o século XIX',
+    period: 'Período Arcaico e tradições indígenas posteriores',
+    estimatedAgeYears: 8000,
+    coordinates: [-117.6786, 35.9691],
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Coso_petroglyphs_%285%29.JPG',
+    imageCaption: 'Petróglifo de carneiro-selvagem no Distrito de Arte Rupestre Coso, Califórnia.',
+    didacticSummary: 'Os cânions da Coso Range concentram uma quantidade extraordinária de petróglifos talhados na pátina escura do basalto. Carneiros-selvagens de grandes chifres dominam muitos painéis, acompanhados por figuras humanas, armas, motivos abstratos e composições cuja interpretação — caça, rito, narrativa ou marca territorial — continua debatida.',
+    historicalSignificance: 'A Marinha dos Estados Unidos descreve os cânions de Coso como uma das maiores concentrações de arte rupestre do Hemisfério Norte; apenas Little Petroglyph Canyon possui cerca de 20 mil imagens documentadas. O distrito é National Historic Landmark desde 1964.',
+    technique: 'Picotagem, incisão e abrasão removendo o verniz desértico do basalto',
+    unesco: false,
+    highlightedElement: 'Carneiros-selvagens monumentais sobre o verniz negro do deserto'
   },
 
   // ÁFRICA
@@ -315,6 +444,49 @@ export const ROCK_ART_SITES: RockArtSite[] = [
     highlightedElement: 'O animal híbrido teriántropo com listras de zebra'
   },
 
+  {
+    id: 'tsodilo',
+    name: 'Colinas de Tsodilo',
+    originalName: 'Tsodilo Hills',
+    country: 'Botsuana',
+    countryCode: 'BW',
+    region: 'Kalahari, Distrito Noroeste',
+    continent: 'África',
+    approxAge: 'da Idade da Pedra ao século XIX',
+    period: 'Longa sequência San e comunidades posteriores',
+    estimatedAgeYears: 5000,
+    coordinates: [21.7333, -18.7500],
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Tsodilo_Hills_rock_paintings1.jpg',
+    imageCaption: 'Pinturas rupestres preservadas nos abrigos quartzíticos das Colinas de Tsodilo.',
+    didacticSummary: 'Quatro grandes elevações de quartzito emergem abruptamente das areias do Kalahari e guardam mais de 4.500 pinturas em uma área extremamente concentrada. Animais, figuras humanas e sinais foram produzidos em diferentes épocas, sobretudo em pigmentos vermelhos e brancos, formando uma sequência visual associada a sucessivas comunidades da região.',
+    historicalSignificance: 'Chamado de “Louvre do Deserto”, Tsodilo combina arqueologia, arte rupestre e uma paisagem ainda reverenciada por comunidades locais como lugar de culto e presença ancestral. Seu registro arqueológico documenta atividades humanas e mudanças ambientais ao longo de dezenas de milhares de anos.',
+    technique: 'Pintura rupestre com pigmentos minerais vermelhos e brancos em abrigos de quartzito',
+    unesco: true,
+    unescoYear: 2001,
+    highlightedElement: 'Animais vermelhos e brancos distribuídos pelas colinas sagradas'
+  },
+  {
+    id: 'tadrart-acacus',
+    name: 'Sítios Rupestres de Tadrart Acacus',
+    originalName: 'Rock-Art Sites of Tadrart Acacus',
+    country: 'Líbia',
+    countryCode: 'LY',
+    region: 'Fezzan, próximo a Ghat',
+    continent: 'África',
+    approxAge: '~12.000 a.C. a 100 d.C.',
+    period: 'Do fim do Paleolítico às sociedades pastoris do Saara',
+    estimatedAgeYears: 14000,
+    coordinates: [10.3333, 24.8333],
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Libya_4924_Pictograms_Tadrart_Acacus_Luca_Galuzzi_2007.jpg',
+    imageCaption: 'Pictogramas preservados em abrigo rochoso do maciço de Tadrart Acacus, no Saara líbio.',
+    didacticSummary: 'Milhares de pinturas e gravuras espalhadas pelo maciço de Acacus atravessam mais de doze milênios de transformações. Fauna de savana, caçadores, cenas de dança, rebanhos e figuras humanas registram visualmente a passagem de um Saara muito mais úmido para o ambiente árido atual e as adaptações das sociedades que ali viveram.',
+    historicalSignificance: 'Poucos conjuntos mostram de forma tão extensa a relação entre mudança climática, fauna e modos de vida no Saara. Inscrito pela UNESCO em 1985, o sítio permanece na Lista do Patrimônio Mundial em Perigo desde 2016 em razão das ameaças à sua conservação.',
+    technique: 'Pintura a pigmentos minerais e petróglifos por incisão e percussão',
+    unesco: true,
+    unescoYear: 1985,
+    highlightedElement: 'Cenas de pastoreio e fauna de um antigo Saara verde'
+  },
+
   // ÁSIA
   {
     id: 'bhimbetka',
@@ -382,6 +554,50 @@ export const ROCK_ART_SITES: RockArtSite[] = [
     highlightedElement: 'Grandes barcos solares de junco e os dançarinos Yallı'
   },
 
+  {
+    id: 'tanbaly',
+    name: 'Petróglifos de Tanbaly',
+    originalName: 'Petroglyphs of the Archaeological Landscape of Tanbaly',
+    country: 'Cazaquistão',
+    countryCode: 'KZ',
+    region: 'Montanhas Chu-Ili, região de Almaty',
+    continent: 'Ásia',
+    approxAge: '~1.500 a.C. ao início do século XX',
+    period: 'Idade do Bronze às sociedades pastoris históricas',
+    estimatedAgeYears: 3500,
+    coordinates: [75.5350, 43.8033],
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Tamgaly_main_petroglyph.jpg',
+    imageCaption: 'Painel de Tanbaly com figuras antropomórficas e motivos associados ao universo ritual da estepe.',
+    didacticSummary: 'Cerca de cinco mil gravuras distribuem-se por dezenas de conjuntos no cânion de Tanbaly, acompanhadas por assentamentos, necrópoles e áreas de culto. Entre os motivos mais marcantes estão figuras antropomórficas com cabeças radiadas, animais, cenas de pastoreio e composições que parecem articuladas a altares e espaços sacrificiais.',
+    historicalSignificance: 'O complexo oferece uma sequência excepcional da organização social, economia pastoril e práticas rituais das populações da estepe centro-asiática. Descoberto por uma equipe arqueológica em 1957, tornou-se Patrimônio Mundial em 2004.',
+    discoveryYear: '1957',
+    technique: 'Petróglifos picotados e incisos em superfícies rochosas escurecidas',
+    unesco: true,
+    unescoYear: 2004,
+    highlightedElement: 'Figuras de “cabeça solar” reunidas em cenas rituais'
+  },
+  {
+    id: 'mongolian-altai',
+    name: 'Complexos de Petróglifos do Altai Mongol',
+    originalName: 'Petroglyphic Complexes of the Mongolian Altai',
+    country: 'Mongólia',
+    countryCode: 'MN',
+    region: 'Bayan-Ölgii, Montanhas Altai',
+    continent: 'Ásia',
+    approxAge: '~11.000 a.C. ao século VIII d.C.',
+    period: 'Pleistoceno Final, Holoceno, Idade do Bronze, período cita e turco',
+    estimatedAgeYears: 12000,
+    coordinates: [88.3954, 49.3340],
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Petroglyphic_Complexes_of_the_Altai%2C_Mongolia.jpg',
+    imageCaption: 'Petróglifos do Altai Mongol, parte de uma sequência visual de cerca de doze mil anos.',
+    didacticSummary: 'Três grandes conjuntos de arte rupestre — Tsagaan Salaa-Baga Oigor, Upper Tsagaan Gol e Aral Tolgoi — registram a transformação da paisagem e das sociedades do Altai. As imagens mais antigas mostram grandes animais selvagens; fases posteriores acompanham o surgimento do pastoreio, da cultura equestre nômade e das sociedades citas e turcas.',
+    historicalSignificance: 'A sequência do Altai Mongol é particularmente valiosa por preservar, em um mesmo território, mudanças ambientais e econômicas de enorme duração. Mamutes, rinocerontes, alces, auroques, íbex e cavaleiros formam um raro arquivo visual da pré-história e da história inicial do norte da Ásia.',
+    technique: 'Petróglifos por picotagem e incisão em afloramentos rochosos de alta montanha',
+    unesco: true,
+    unescoYear: 2011,
+    highlightedElement: 'Grandes animais pleistocênicos e a transição para cavaleiros nômades'
+  },
+
   // OCEANIA
   {
     id: 'kakadu-ubirr',
@@ -425,7 +641,50 @@ export const ROCK_ART_SITES: RockArtSite[] = [
     technique: 'Pintura cerimonial sagrada renovada com ocre mineral e seiva vegetal',
     unesco: false,
     highlightedElement: 'Os rostos ovais brancos sem boca com auréolas de tempestade'
+  },
+
+  {
+    id: 'murujuga',
+    name: 'Paisagem Cultural de Murujuga',
+    originalName: 'Murujuga Cultural Landscape',
+    country: 'Austrália',
+    countryCode: 'AU',
+    region: 'Península de Burrup e Arquipélago de Dampier, Austrália Ocidental',
+    continent: 'Oceania',
+    approxAge: 'mais de 50.000 anos de tradição cultural',
+    period: 'Tradição Ngarda-Ngarli de longa duração',
+    estimatedAgeYears: 50000,
+    coordinates: [116.6685, -20.5650],
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Burrup_Rock_Art.jpg',
+    imageCaption: 'Petróglifo aborígene de Murujuga, gravado nas rochas escuras da Península de Burrup.',
+    didacticSummary: 'Murujuga reúne uma concentração extraordinária de petróglifos integrada a uma paisagem terrestre, insular e marinha viva. Figuras humanas, rostos arcaicos, animais, pegadas e formas abstratas foram gravados com técnicas variadas; parte da fauna representada inclui marsupiais que já desapareceram da região.',
+    historicalSignificance: 'A UNESCO reconheceu em 2025 o valor de uma tradição artística e cultural construída ao longo de mais de 50 mil anos. O conjunto, estimado pela organização em cerca de um a dois milhões de petróglifos, permanece inseparável do sistema de leis, narrativas de criação e conhecimento dos Ngarda-Ngarli.',
+    technique: 'Picotagem, percussão, incisão e abrasão com diferentes tratamentos de textura',
+    unesco: true,
+    unescoYear: 2025,
+    highlightedElement: 'Rostos arcaicos, fauna extinta e figuras humanas em movimento'
+  },
+  {
+    id: 'quinkan-country',
+    name: 'Arte Rupestre de Quinkan Country',
+    originalName: 'Quinkan Country Rock Art',
+    country: 'Austrália',
+    countryCode: 'AU',
+    region: 'Laura, Península do Cabo York, Queensland',
+    continent: 'Oceania',
+    approxAge: 'até ~27.000 anos AP',
+    period: 'Tradições aborígenes de longa duração do Cabo York',
+    estimatedAgeYears: 27000,
+    coordinates: [144.4500, -15.5600],
+    imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Quinkan2.jpg',
+    imageCaption: 'Exemplo da arte figurativa de Quinkan Country, nas galerias rochosas próximas a Laura.',
+    didacticSummary: 'As escarpas de arenito ao redor de Laura preservam galerias densas e estilisticamente variadas, com grandes figuras humanas, animais, objetos e seres espirituais. O nome Quinkan tornou-se especialmente associado aos Timaras, altos e delgados, e aos Imjims ou Anurra, figuras de corpos mais largos ligadas ao mundo espiritual.',
+    historicalSignificance: 'Quinkan Country permanece uma paisagem cultural ativa para seus guardiões tradicionais. Evidências arqueológicas indicam ocupação humana regional há cerca de 34 mil anos e arte rupestre com aproximadamente 27 mil anos, enquanto tradições, leis e histórias continuam conectando as comunidades ao território.',
+    technique: 'Pintura policromática a pigmentos minerais, estêncil e gravura em arenito',
+    unesco: false,
+    highlightedElement: 'Os espíritos Quinkan Timara e Imjim'
   }
+
 ];
 
 export const CONTINENT_FILTERS = [
