@@ -32,6 +32,29 @@ const DEFAULT_TRANSFORM: TransformState = {
   scale: 1
 };
 
+const MIN_SCALE = 1;
+const MAX_SCALE = 6.5;
+
+const clampTransform = ({ x, y, scale }: TransformState): TransformState => {
+  const safeScale = Math.min(Math.max(scale, MIN_SCALE), MAX_SCALE);
+
+  // At the global view there is nothing to pan: keep the map perfectly centered.
+  if (safeScale <= MIN_SCALE) {
+    return { ...DEFAULT_TRANSFORM };
+  }
+
+  // Keep the transformed SVG canvas covering the viewport at all times.
+  // This prevents the world layer from being dragged permanently off-screen.
+  const minX = MAP_WIDTH - MAP_WIDTH * safeScale;
+  const minY = MAP_HEIGHT - MAP_HEIGHT * safeScale;
+
+  return {
+    scale: safeScale,
+    x: Math.min(0, Math.max(minX, x)),
+    y: Math.min(0, Math.max(minY, y))
+  };
+};
+
 export const WorldMap: React.FC<WorldMapProps> = ({
   sites,
   selectedSite,
@@ -44,12 +67,18 @@ export const WorldMap: React.FC<WorldMapProps> = ({
   const [isAnimating, setIsAnimating] = useState(false);
   const [hoveredSite, setHoveredSite] = useState<RockArtSite | null>(null);
   const [isDragging, setIsDragging] = useState(false);
-  const [dragStart, setDragStart] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const dragStartRef = useRef<{
+    pointerX: number;
+    pointerY: number;
+    transformX: number;
+    transformY: number;
+  } | null>(null);
 
   // Smooth animation to a target transform
   const animateTo = useCallback((target: TransformState, duration = 650) => {
     setIsAnimating(true);
-    const start = { ...transform };
+    const start = clampTransform(transform);
+    const safeTarget = clampTransform(target);
     const startTime = performance.now();
 
     const step = (now: number) => {
@@ -59,9 +88,9 @@ export const WorldMap: React.FC<WorldMapProps> = ({
       const ease = 1 - Math.pow(1 - progress, 3);
 
       setTransform({
-        x: start.x + (target.x - start.x) * ease,
-        y: start.y + (target.y - start.y) * ease,
-        scale: start.scale + (target.scale - start.scale) * ease
+        x: start.x + (safeTarget.x - start.x) * ease,
+        y: start.y + (safeTarget.y - start.y) * ease,
+        scale: start.scale + (safeTarget.scale - start.scale) * ease
       });
 
       if (progress < 1) {
@@ -100,20 +129,47 @@ export const WorldMap: React.FC<WorldMapProps> = ({
 
   // Dragging / Panning handlers
   const handlePointerDown = (e: React.PointerEvent) => {
-    // Only drag with primary mouse button
-    if (e.button !== 0) return;
+    // Only drag with the primary pointer and only when there is actually room to pan.
+    if (e.button !== 0 || isAnimating || transform.scale <= MIN_SCALE) return;
+
+    e.currentTarget.setPointerCapture(e.pointerId);
     setIsDragging(true);
-    setDragStart({ x: e.clientX - transform.x, y: e.clientY - transform.y });
+    dragStartRef.current = {
+      pointerX: e.clientX,
+      pointerY: e.clientY,
+      transformX: transform.x,
+      transformY: transform.y
+    };
   };
 
   const handlePointerMove = (e: React.PointerEvent) => {
-    if (!isDragging || isAnimating) return;
-    const newX = e.clientX - dragStart.x;
-    const newY = e.clientY - dragStart.y;
-    setTransform((prev) => ({ ...prev, x: newX, y: newY }));
+    const dragStart = dragStartRef.current;
+    if (!isDragging || isAnimating || !dragStart) return;
+
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (!rect) return;
+
+    // preserveAspectRatio="xMidYMid meet" uses one uniform screen-to-SVG scale.
+    const renderedScale = Math.min(rect.width / MAP_WIDTH, rect.height / MAP_HEIGHT);
+    if (!Number.isFinite(renderedScale) || renderedScale <= 0) return;
+
+    const deltaX = (e.clientX - dragStart.pointerX) / renderedScale;
+    const deltaY = (e.clientY - dragStart.pointerY) / renderedScale;
+
+    setTransform((prev) =>
+      clampTransform({
+        ...prev,
+        x: dragStart.transformX + deltaX,
+        y: dragStart.transformY + deltaY
+      })
+    );
   };
 
-  const handlePointerUp = () => {
+  const handlePointerUp = (e?: React.PointerEvent) => {
+    if (e && e.currentTarget.hasPointerCapture(e.pointerId)) {
+      e.currentTarget.releasePointerCapture(e.pointerId);
+    }
+    dragStartRef.current = null;
     setIsDragging(false);
   };
 
@@ -123,7 +179,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
     if (isAnimating) return;
 
     const zoomFactor = e.deltaY < 0 ? 1.15 : 0.88;
-    const newScale = Math.min(Math.max(transform.scale * zoomFactor, 0.85), 6.5);
+    const newScale = Math.min(Math.max(transform.scale * zoomFactor, MIN_SCALE), MAX_SCALE);
 
     // Zoom relative to map center
     const rect = containerRef.current?.getBoundingClientRect();
@@ -139,11 +195,13 @@ export const WorldMap: React.FC<WorldMapProps> = ({
     const newX = svgX - (svgX - transform.x) * (newScale / transform.scale);
     const newY = svgY - (svgY - transform.y) * (newScale / transform.scale);
 
-    setTransform({
-      x: newX,
-      y: newY,
-      scale: newScale
-    });
+    setTransform(
+      clampTransform({
+        x: newX,
+        y: newY,
+        scale: newScale
+      })
+    );
   };
 
   // Manual Zoom In / Out
@@ -188,11 +246,11 @@ export const WorldMap: React.FC<WorldMapProps> = ({
   return (
     <div 
       ref={containerRef}
-      className="relative w-full h-full select-none overflow-hidden bg-[#F6F2EA]"
+      className="relative w-full h-full select-none overflow-hidden bg-[#F6F2EA] touch-none"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
-      onPointerLeave={handlePointerUp}
+      onPointerCancel={handlePointerUp}
       onWheel={handleWheel}
       style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
     >
@@ -270,7 +328,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
                   fill="#EDE5D4"
                   stroke="#D3C7B2"
                   strokeWidth="0.6"
-                  className="transition-colors duration-150 hover:fill-[#E5DC C7]"
+                  className="transition-colors duration-150 hover:fill-[#E5DCC7]"
                 />
               );
             })}
@@ -423,7 +481,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
           >
             <ZoomOut className="w-4 h-4" />
           </button>
-          <div className="h-px bg-[#E4DC CE] mx-1" />
+          <div className="h-px bg-[#E4DCCE] mx-1" />
           <button
             onClick={resetZoom}
             aria-label="Restaurar mapa mundi inteiro"
