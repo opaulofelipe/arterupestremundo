@@ -1,7 +1,11 @@
-name: Deploy to GitHub Pages
+name: Deploy compiled app to GitHub Pages
 
 on:
-  push:
+  workflow_run:
+    workflows:
+      - pages build and deployment
+    types:
+      - completed
     branches:
       - main
   workflow_dispatch:
@@ -12,7 +16,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: compiled-pages
   cancel-in-progress: true
 
 jobs:
@@ -22,6 +26,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -50,6 +56,6 @@ jobs:
     needs: build
 
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy compiled site
         id: deployment
         uses: actions/deploy-pages@v4
