@@ -1,0 +1,6 @@
+{
+  "name": "Atlas Rupestre — O Alvorecer da Arte Humana",
+  "description": "Mapa-múndi interativo e elegante das artes rupestres mais famosas da história em todos os continentes, com fotografias reais e curadoria arqueológica.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
